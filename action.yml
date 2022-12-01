@@ -6,3 +6,6 @@ runs:
     - name: Running ${{ env.GITHUB_ACTION_PATH }}
       shell: bash
       run: echo "{$GITHUB_ACTION_PATH}"
+    - name: Env
+      shell: bash
+      run: env
