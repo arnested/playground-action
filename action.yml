@@ -3,5 +3,6 @@ description: A testing action
 runs:
   using: composite
   steps:
-    - run: Running - ${{ env.GITHUB_ACTION_PATH }}
-      shell: echo $GITHUB_ACTION_PATH
+    - name: Running ${{ env.GITHUB_ACTION_PATH }}
+      shell: bash
+      run: echo "{$GITHUB_ACTION_PATH}"
