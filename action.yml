@@ -3,9 +3,6 @@ description: A testing action
 runs:
   using: composite
   steps:
-    - name: Running ${{ env.GITHUB_ACTION_PATH }}
+    - name: Find version of this action
       shell: bash
-      run: echo "{$GITHUB_ACTION_PATH##*/}"
-    - name: Env
-      shell: bash
-      run: env
+      run: echo This is version "${GITHUB_ACTION_PATH##*/}"
