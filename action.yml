@@ -6,3 +6,9 @@ runs:
     - name: Find version of this action
       shell: bash
       run: echo This is version "${GITHUB_ACTION_PATH##*/}"
+    - name: ls action
+      shell: bash
+      run: ls -A "${GITHUB_ACTION_PATH}"
+    - name: git describe
+      shell: bash
+      run: echo $(cd "${GITHUB_ACTION_PATH}" && git describe --tag --always --abbbrev=0)
