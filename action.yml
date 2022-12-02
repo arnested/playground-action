@@ -1,3 +1,4 @@
+# $Id$
 name: Playground action
 description: A testing action
 runs:
@@ -6,9 +7,9 @@ runs:
     - name: Find version of this action
       shell: bash
       run: echo This is version "${GITHUB_ACTION_PATH##*/}"
-    - name: ls action
+    - name: Find SHA of this action
       shell: bash
-      run: ls -A "${GITHUB_ACTION_PATH}"
-    - name: git describe
+      run: "echo This is SHA $(grep -Po '(?<=\\$Id[:]\\W)(.*)(?<!\\W\\$)' \"${GITHUB_ACTION_PATH}/action.yml\")"
+    - name: Find SHA of this action
       shell: bash
-      run: echo $(cd "${GITHUB_ACTION_PATH}" && git describe --tag --always --abbbrev=0)
+      run: "echo exported SHA '$Format:%H$'"
