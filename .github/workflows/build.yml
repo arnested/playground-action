@@ -38,3 +38,5 @@ jobs:
         tags: |
           ghcr.io/${{ github.repository }}:${{ github.sha }}
         push: ${{ github.ref == 'refs/heads/main' }}
+    - name: Tag v1
+      run: git tag --force v1 && git push --tags --force
