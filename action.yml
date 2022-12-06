@@ -1,14 +1,6 @@
 name: Playground action
 description: A testing action
 runs:
-  using: composite
-  steps:
-    - name: Find version of this action
-      shell: bash
-      run: echo This is version "${GITHUB_ACTION_PATH##*/}"
-    - name: Find SHA of this action
-      shell: bash
-      run: "echo This is SHA $(grep -Po '(?<=\\$Id[:]\\W)(.*)(?<!\\W\\$)' \"${GITHUB_ACTION_PATH}/action.yml\")"
-    - name: Find SHA of this action
-      shell: bash
-      run: "echo exported SHA '$Format:%H$'"
+  using: docker
+  image: docker://ghcr.io/arnested/playground-action:$Format:%H$
+  pre-entrypoint: 'pre'
