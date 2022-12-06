@@ -3,4 +3,3 @@ description: A testing action
 runs:
   using: docker
   image: docker://ghcr.io/arnested/playground-action:$Format:%H$
-  pre-entrypoint: 'pre'

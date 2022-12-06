@@ -6,13 +6,11 @@ RUN go env
 
 ADD . /go
 
-RUN (cd cmd/pre && go build)
 RUN (cd cmd/main && go build)
 
 FROM scratch
 
 WORKDIR /
-COPY --from=build /go/cmd/pre/pre /pre
 COPY --from=build /go/cmd/main/main /main
 
 ENV PATH /
