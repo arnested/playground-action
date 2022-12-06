@@ -1,6 +1,2 @@
-action.yml export-subst
-docker export-ignore
-cmd export-ignore
-go.mod export-ignore
-go.sum export-ignore
-.* export-ignore
+* export-ignore
+action.yml !export-ignore export-subst
