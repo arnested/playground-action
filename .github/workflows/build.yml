@@ -30,7 +30,6 @@ jobs:
         builder: ${{ steps.buildx.outputs.name }}
         load: ${{ github.ref != 'refs/heads/main' }}
         context: .
-        file: ./docker/Dockerfile
         labels: |
           org.opencontainers.image.source=https://github.com/${{ github.repository }}
           org.opencontainers.image.version=${{ github.sha }}
@@ -39,4 +38,5 @@ jobs:
           ghcr.io/${{ github.repository }}:${{ github.sha }}
         push: ${{ github.ref == 'refs/heads/main' }}
     - name: Tag v1
+      if: github.ref == 'refs/heads/main'
       run: git tag --force v1 && git push --tags --force
