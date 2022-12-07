@@ -5,7 +5,7 @@ WORKDIR /build
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
 
-ADD . .
+COPY . .
 
 RUN go build
 

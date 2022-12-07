@@ -1,3 +1,4 @@
+---
 name: Playground action
 description: An action testing the use of export-subst git attributes
 runs:
