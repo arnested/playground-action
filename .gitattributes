@@ -1,2 +1,2 @@
 * export-ignore
-action.yml !export-ignore export-subst
+action.yml -export-ignore export-subst
