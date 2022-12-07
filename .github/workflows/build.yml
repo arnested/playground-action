@@ -5,8 +5,6 @@ name: Docker build and push
 permissions:
   contents: write
   packages: write
-  security-events: write
-  actions: read
 
 jobs:
   build:
